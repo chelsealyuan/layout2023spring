@@ -49,27 +49,40 @@
 
     <!-- Stories List -->
     <h1>Other Stories</h1>
-    <ul>
+    <ul class="story-list">
       <!-- This 'loop' generates a list item for each story in the 'stories' array. -->
       <li v-for="story in stories" class="other-story">
 
-        <!-- Story title (linked) -->
-        <a v-bind:href="story.url">{{ story.title }}</a>
+        <article> <!-- for screenreaders & accessibility -->
+          <figure class="other-image">
+            <!-- Story image -->
+            <img v-bind:src="story.image">
+            <!-- include figcaption for caption or attribution -->
+          </figure>
 
-        <!-- Story description -->
-        {{ story.description }}
+          <!-- Story date -->
+          <p class="story-date">{{ story.date }}</p>
 
-        <!-- Story date -->
-        {{ story.date }}
+          <!-- Story title (linked) -->
+          <h1>
+            <a class="story-title" v-bind:href="story.url">{{ story.title }}</a>
+          </h1>
 
-        <!-- Story image -->
-        <img v-bind:src="story.image">
+          <!-- Story description - not expecting to recieve HTML back -->
+          <p class="story-description">{{ story.description }}</p>
 
-        <!-- Story content (truncated) -->
-        <span v-html="story.content"></span>
+          <!-- Story content (truncated) - could recieve internal HTML -->
+          <div class="story-content">
+            <span v-html="story.content"></span>
+          </div>
 
-        <!-- Story source (linked) -->
-        <a v-bind:href="story.source.url">{{ story.source.name }}</a>
+          <div class="story-source">
+            <!-- Story source (linked) -->
+            <a v-bind:href="story.source.url">{{ story.source.name }}</a>
+          </div>
+
+
+        </article>
 
       </li>
     </ul>
