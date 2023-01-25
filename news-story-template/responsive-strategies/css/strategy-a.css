@@ -80,6 +80,10 @@ hr {
 }
 
 @media (min-width: 720px) {
+  img {
+    max-height: 200px;
+  }
+
   .story-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
