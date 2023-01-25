@@ -79,11 +79,11 @@ hr {
   border: 1px solid gray;
 }
 
-@media (min-width: px) {
+@media (min-width: 720px) {
   .story-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 18px;
+    grid-gap: 24px;
   }
 
   .story-source a {
@@ -97,12 +97,15 @@ hr {
   .other-story {
     margin: 0;
   }
+
+  
 }
 
 @media (min-width: 982px) {
   .story-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 18px;
   }
 
   .story-source a {
