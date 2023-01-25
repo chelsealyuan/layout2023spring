@@ -1,5 +1,6 @@
 body {
-  max-width: 768px;
+  width: 80%;
+  max-width: 1024px;
   margin: auto;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12pt; /*use for setting rem later*/
@@ -13,6 +14,11 @@ pre {
   margin: 0px;
 }
 
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
 .featured-story {
   display: none;
 }
@@ -24,12 +30,12 @@ pre {
 
 .story-date {
   color: gray;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: bold;
   margin: 0.5rem 0rem;
 }
 
-h1{
+h1 {
   margin: 8px 0px;
 }
 
@@ -38,15 +44,18 @@ h1{
   font-size: 1.4rem;
   font-weight: bold;
   text-decoration: none;
-
 }
 
 .story-content {
   display: none;
 }
 
-.story-source{
+.story-source {
   margin: 1.1rem 0rem;
+}
+
+.story-source a:hover {
+  color: gray;
 }
 
 .story-source a {
@@ -59,13 +68,60 @@ h1{
 
 .story-description {
   margin: 12px 0px;
-  font-size: 1.0rem;
+  font-size: 0.9rem;
 }
 
 .other-story {
   margin: 3rem 0rem;
 }
 
-hr{
-  border: 1px solid  gray;
+hr {
+  border: 1px solid gray;
+}
+
+@media (min-width: px) {
+  .story-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 18px;
+  }
+
+  .story-source a {
+    font-size: 0.85rem;
+  }
+
+  hr {
+    display: none;
+  }
+
+  .other-story {
+    margin: 0;
+  }
+}
+
+@media (min-width: 982px) {
+  .story-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .story-source a {
+    font-size: 0.9rem;
+  }
+
+  .story-date {
+    font-size: 1rem;
+  }
+
+  .story-title {
+    font-size: 1.4rem;
+  }
+
+  .story-description {
+    font-size: 0.9rem;
+  }
+
+  hr {
+    display: none;
+  }
 }
