@@ -59,16 +59,8 @@
         <article> <!-- for screenreaders & accessibility -->
           <h1>
             <a class="story-title" v-bind:href="story.url">{{ story.title }}</a>
-            <!-- Story date -->
-            <p class="story-date">{{ story.date }}</p>
           </h1>
           <div class="non-title-content">
-            <figure class="other-image">
-              <!-- Story image -->
-              <img v-bind:src="story.image">
-              <!-- include figcaption for caption or attribution -->
-            </figure>
-
             <div class="story-info">
               <!-- Story title (linked) -->
 
@@ -81,14 +73,18 @@
               </div>
 
               <div class="story-source">
+                <!-- Story date -->
+                <span class="story-date">{{ story.date }} | </span>
                 <!-- Story source (linked) -->
                 <a v-bind:href="story.source.url">{{ story.source.name }}</a>
               </div>
-
-              <hr>
             </div>
+            <figure class="other-image">
+              <!-- Story image -->
+              <img v-bind:src="story.image">
+              <!-- include figcaption for caption or attribution -->
+            </figure>
           </div>
-
         </article>
 
       </li>
